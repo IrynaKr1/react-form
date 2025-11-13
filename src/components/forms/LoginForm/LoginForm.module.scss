@@ -1,0 +1,53 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #afc2d5;
+$shade-color: #5f85ab;
+$main-padding: 10px;
+$input-width: 70%;
+
+body {
+  background-color: $primary-color;
+}
+
+.formContainer {
+  font-family: $font-stack;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  gap: $main-padding;
+  padding: $main-padding;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  width: $input-width;
+  text-align: left;
+  margin-top: -5px;
+}
+
+.input {
+  padding: $main-padding;
+  width: $input-width;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: $shade-color;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: $input-width;
+
+  &:hover {
+    background-color: darken($shade-color, 10%);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
