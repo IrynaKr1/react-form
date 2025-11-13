@@ -1,15 +1,20 @@
-
+import React from 'react';
 import RegistrationForm from '../../components/forms/RegistrationForm';
 import Header from '../../components/Header';
+import styles from './RegistrationPage.module.scss';
 
 function RegistrationPage() {
   return (
-    <section>
+    <div className={styles.registrationPageContainer}>
       <Header />
-      <h2>Create an account</h2>
-      <p>We always keep your name and email address private</p>
-      <RegistrationForm />
-    </section>
+      <div className={styles.contentWrapper}>
+        <h2 className={styles.title}>Create an account</h2>
+        <p className={styles.subtitle}>
+          We always keep your name and email address private
+        </p>
+        <RegistrationForm />
+      </div>
+    </div>
   );
 }
 

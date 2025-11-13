@@ -1,7 +1,7 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #afc2d5;
 
-.loginPageContainer {
+.registrationPageContainer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,17 +18,34 @@ $primary-color: #afc2d5;
 
 .title {
   font-family: $font-stack;
-  font-size: 28px;
-  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
   text-align: center;
   color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 10px;
   }
 
   @media (max-width: 480px) {
-    font-size: 20px;
+    font-size: 22px;
+  }
+}
+
+.subtitle {
+  font-family: $font-stack;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+  max-width: 500px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-bottom: 20px;
   }
 }
