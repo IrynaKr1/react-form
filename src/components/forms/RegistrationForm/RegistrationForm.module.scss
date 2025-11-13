@@ -1,0 +1,191 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #afc2d5;
+$shade-color: #5f85ab;
+$accent-color: #4cd964;
+$border-color: #ffffff;
+$main-padding: 10px;
+
+.formContainer {
+  font-family: $font-stack;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+  gap: 15px;
+  padding: 30px;
+  justify-content: center;
+  align-items: stretch;
+
+  @media (max-width: 768px) {
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+    padding: 15px;
+    gap: 12px;
+  }
+}
+
+.rowFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid $border-color;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    border-color: $shade-color;
+  }
+
+  &::placeholder {
+    color: #999;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  text-align: left;
+  margin-top: -5px;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+}
+
+.radioOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  border: 2px solid $border-color;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white;
+  }
+
+  input[type='radio'] {
+    margin-top: 3px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
+}
+
+.radioLabel {
+  flex: 1;
+
+  .radioTitle {
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+
+  .radioDescription {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+
+  input[type='checkbox'] {
+    margin-top: 3px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  label {
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    line-height: 1.5;
+
+    a {
+      color: white;
+      text-decoration: underline;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: $shade-color;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color;
+    border: $shade-color 2px solid;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

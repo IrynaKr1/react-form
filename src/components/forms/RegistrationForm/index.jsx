@@ -1,6 +1,7 @@
 import React from 'react';
 import { USER_VALIDATION_SCHEMA } from '../../../utils/validate/validationSchemas';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import styles from './RegistrationForm.module.scss';
 
 function RegistrationForm() {
   const initialValues = {
@@ -9,7 +10,11 @@ function RegistrationForm() {
     login: '',
     email: '',
     password: '',
+    passwordConfirmation: '',
+    role: '',
+    checked: false,
   };
+
   const handleSubmit = (values, formikBag) => {
     console.log('Submit form with values', values);
     formikBag.resetForm();
@@ -21,40 +26,143 @@ function RegistrationForm() {
       onSubmit={handleSubmit}
       validationSchema={USER_VALIDATION_SCHEMA}
     >
-      <Form>
-        <Field name='firstName' type='text' placeholder='Your firstname' />
-        <ErrorMessage name='firstName' />
-        <Field name='lastName' type='text' placeholder='Your lastname' />
-        <ErrorMessage name='lastName' />
-        <Field name='login' type='text' placeholder='Add your login' />
-        <ErrorMessage name='login' />
-        <Field name='email' type='email' placeholder='Add your email' />
-        <ErrorMessage name='email' />
-        <Field
-          name='password'
-          type='password'
-          placeholder='Add your password'
-        />
-        <ErrorMessage name='password' />
-        <Field
-          name='passwordConfirmation'
-          type='password'
-          placeholder='Confirm your password'
-        />
-        <label>
-          <Field type='radio' name='role' value='buyer' />
-          Join as a buyer
-        </label>
-        <label>
-          <Field type='radio' name='role' value='creative' />
-          Join as a creative
-        </label>
-        <label>
-          <Field type='checkbox' name='checked' value='terms' />
-          By clicking this chechbox you agree to our Terms of Service
-        </label>
-        <button>Create account</button>
-      </Form>
+      {({ values }) => (
+        <Form className={styles.formContainer}>
+          {/* First Name i Last Name w jednym rzędzie */}
+          <div className={styles.rowFields}>
+            <div className={styles.fieldGroup}>
+              <Field
+                name='firstName'
+                type='text'
+                placeholder='First name'
+                className={styles.input}
+              />
+              <ErrorMessage
+                name='firstName'
+                component='div'
+                className={styles.error}
+              />
+            </div>
+
+            <div className={styles.fieldGroup}>
+              <Field
+                name='lastName'
+                type='text'
+                placeholder='Last name'
+                className={styles.input}
+              />
+              <ErrorMessage
+                name='lastName'
+                component='div'
+                className={styles.error}
+              />
+            </div>
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <Field
+              name='login'
+              type='text'
+              placeholder='Login'
+              className={styles.input}
+            />
+            <ErrorMessage
+              name='login'
+              component='div'
+              className={styles.error}
+            />
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <Field
+              name='email'
+              type='email'
+              placeholder='Email'
+              className={styles.input}
+            />
+            <ErrorMessage
+              name='email'
+              component='div'
+              className={styles.error}
+            />
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <Field
+              name='password'
+              type='password'
+              placeholder='Password'
+              className={styles.input}
+            />
+            <ErrorMessage
+              name='password'
+              component='div'
+              className={styles.error}
+            />
+          </div>
+
+          {/* Password Confirmation */}
+          <div className={styles.fieldGroup}>
+            <Field
+              name='passwordConfirmation'
+              type='password'
+              placeholder='Confirm password'
+              className={styles.input}
+            />
+            <ErrorMessage
+              name='passwordConfirmation'
+              component='div'
+              className={styles.error}
+            />
+          </div>
+
+          <div className={styles.radioGroup}>
+            <label
+              className={`${styles.radioOption} ${
+                values.role === 'buyer' ? styles.checked : ''
+              }`}
+            >
+              <Field type='radio' name='role' value='buyer' />
+              <div className={styles.radioLabel}>
+                <span className={styles.radioTitle}>Join As a Buyer</span>
+                <span className={styles.radioDescription}>
+                  I am looking for a Name, Logo or Tagline for my business,
+                  brand or product.
+                </span>
+              </div>
+            </label>
+
+            <label
+              className={`${styles.radioOption} ${
+                values.role === 'creative' ? styles.checked : ''
+              }`}
+            >
+              <Field type='radio' name='role' value='creative' />
+              <div className={styles.radioLabel}>
+                <span className={styles.radioTitle}>Join As a Creative</span>
+                <span className={styles.radioDescription}>
+                  I plan to submit name ideas, Logo designs or sell names in
+                  Domain Marketplace.
+                </span>
+              </div>
+            </label>
+          </div>
+
+          <div className={styles.checkboxContainer}>
+            <Field type='checkbox' name='checked' id='terms' />
+            <label htmlFor='terms'>
+              By clicking this checkbox you agree to our{' '}
+              <a href='#' target='_blank'>
+                Terms of Service
+              </a>
+            </label>
+          </div>
+
+          <button type='submit' className={styles.submitButton}>
+            Create Account
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 }
