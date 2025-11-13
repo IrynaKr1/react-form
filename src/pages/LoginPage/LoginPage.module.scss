@@ -1,0 +1,34 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #afc2d5;
+
+.loginPageContainer {
+  min-height: 100vh; // Cała wysokość ekranu
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-color;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.title {
+  font-family: $font-stack;
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
+}

@@ -20,6 +20,14 @@ $main-padding: 10px;
     height: auto;
     object-fit: cover;
   }
+
+  @media (max-width: 768px) {
+    max-width: 150px; // Mniejsze logo na mobile
+  }
+
+  @media (max-width: 480px) {
+    max-width: 120px; // Jeszcze mniejsze na bardzo małych ekranach
+  }
 }
 
 .linkStyle {
@@ -34,5 +42,9 @@ $main-padding: 10px;
 
   &:hover {
     background-color: $shade-color;
+  }
+  @media (max-width: 480px) {
+    padding: 8px;
+    font-size: 14px;
   }
 }

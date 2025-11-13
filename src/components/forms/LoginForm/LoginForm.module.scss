@@ -13,10 +13,20 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 450px;
+  width: 100%;
   gap: $main-padding;
   padding: $main-padding;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+  }
 }
 
 .error {
@@ -44,7 +54,8 @@ body {
   width: $input-width;
 
   &:hover {
-    background-color: darken($shade-color, 10%);
+    background-color: $primary-color;
+    border: $shade-color 2px solid;
   }
 
   &:active {
