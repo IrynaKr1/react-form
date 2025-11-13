@@ -1,4 +1,3 @@
-import React from 'react';
 import { USER_VALIDATION_SCHEMA } from '../../../utils/validate/validationSchemas';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import styles from './RegistrationForm.module.scss';
@@ -28,7 +27,6 @@ function RegistrationForm() {
     >
       {({ values }) => (
         <Form className={styles.formContainer}>
-          {/* First Name i Last Name w jednym rzędzie */}
           <div className={styles.rowFields}>
             <div className={styles.fieldGroup}>
               <Field
@@ -101,7 +99,6 @@ function RegistrationForm() {
             />
           </div>
 
-          {/* Password Confirmation */}
           <div className={styles.fieldGroup}>
             <Field
               name='passwordConfirmation'
