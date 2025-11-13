@@ -1,0 +1,38 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #afc2d5;
+$shade-color: #5f85ab;
+$main-padding: 10px;
+
+.header {
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $main-padding;
+  font-family: $font-stack;
+}
+
+.imageContainer {
+  max-width: 200px;
+
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.linkStyle {
+  text-decoration: none;
+  border: 2px white solid;
+  border-radius: 5px;
+  padding: $main-padding;
+
+  &:visited {
+    color: black;
+  }
+
+  &:hover {
+    background-color: $shade-color;
+  }
+}

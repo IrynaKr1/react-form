@@ -9,21 +9,19 @@ function LoginForm() {
   };
 
   return (
-    <>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={USER_LOGIN_VALIDATION_SCHEMA}
-      >
-        <Form>
-          <Field name='login' type='text' placeholder='Login' />
-          <ErrorMessage name='login' />
-          <Field name='password' type='password' />
-          <ErrorMessage name='password' />
-          <button type='submit'>Login</button>
-        </Form>
-      </Formik>
-    </>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={USER_LOGIN_VALIDATION_SCHEMA}
+    >
+      <Form>
+        <Field name='login' type='text' placeholder='Login' />
+        <ErrorMessage name='login' />
+        <Field name='password' type='password' />
+        <ErrorMessage name='password' />
+        <button type='submit'>Login</button>
+      </Form>
+    </Formik>
   );
 }
 

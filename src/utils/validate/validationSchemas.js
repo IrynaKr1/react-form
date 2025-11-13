@@ -12,6 +12,7 @@ export const USER_VALIDATION_SCHEMA = yup.object({
     .max(35, 'Must be 35 characters or less')
     .required(),
   email: yup.string().email().required(),
+  login: yup.string().min(4).max(15, 'Must be 15 characters or less'),
   password: yup
     .string()
     .required('No password provided')
