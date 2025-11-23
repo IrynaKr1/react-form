@@ -8,7 +8,7 @@ function LoginPage() {
     <div className={styles.loginPageContainer}>
       <Header />
       <div className={styles.contentWrapper}>
-        <h2 className={styles.title}>Login to your account</h2>
+        <h1 className={styles.title}>Login to your account</h1>
         <LoginForm />
       </div>
     </div>
