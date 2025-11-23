@@ -1,6 +1,10 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #afc2d5;
 
+body {
+  background-color: $primary-color;
+}
+
 .registrationPageContainer {
   min-height: 100vh;
   display: flex;
