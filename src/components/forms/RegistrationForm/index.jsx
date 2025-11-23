@@ -1,8 +1,9 @@
 import { USER_VALIDATION_SCHEMA } from '../../../utils/validate/validationSchemas';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { USER_ROLES } from '../../../utils/constants.js';
 import styles from './RegistrationForm.module.scss';
 
-function RegistrationForm() {
+function RegistrationForm () {
   const initialValues = {
     firstName: '',
     lastName: '',
@@ -116,10 +117,10 @@ function RegistrationForm() {
           <div className={styles.radioGroup}>
             <label
               className={`${styles.radioOption} ${
-                values.role === 'buyer' ? styles.checked : ''
+                values.role === USER_ROLES.BUYER ? styles.checked : ''
               }`}
             >
-              <Field type='radio' name='role' value='buyer' />
+              <Field type='radio' name='role' value={USER_ROLES.BUYER} />
               <div className={styles.radioLabel}>
                 <span className={styles.radioTitle}>Join As a Buyer</span>
                 <span className={styles.radioDescription}>
@@ -131,10 +132,10 @@ function RegistrationForm() {
 
             <label
               className={`${styles.radioOption} ${
-                values.role === 'creative' ? styles.checked : ''
+                values.role === USER_ROLES.CREATIVE ? styles.checked : ''
               }`}
             >
-              <Field type='radio' name='role' value='creative' />
+              <Field type='radio' name='role' value={USER_ROLES.CREATIVE} />
               <div className={styles.radioLabel}>
                 <span className={styles.radioTitle}>Join As a Creative</span>
                 <span className={styles.radioDescription}>
