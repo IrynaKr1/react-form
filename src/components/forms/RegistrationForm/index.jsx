@@ -120,7 +120,12 @@ function RegistrationForm () {
                 values.role === USER_ROLES.BUYER ? styles.checked : ''
               }`}
             >
-              <Field type='radio' name='role' value={USER_ROLES.BUYER} />
+              <Field
+                type='radio'
+                name='role'
+                value={USER_ROLES.BUYER}
+                className={styles.radioInput}
+              />
               <div className={styles.radioLabel}>
                 <span className={styles.radioTitle}>Join As a Buyer</span>
                 <span className={styles.radioDescription}>
@@ -135,7 +140,12 @@ function RegistrationForm () {
                 values.role === USER_ROLES.CREATIVE ? styles.checked : ''
               }`}
             >
-              <Field type='radio' name='role' value={USER_ROLES.CREATIVE} />
+              <Field
+                type='radio'
+                name='role'
+                value={USER_ROLES.CREATIVE}
+                className={styles.radioInput}
+              />
               <div className={styles.radioLabel}>
                 <span className={styles.radioTitle}>Join As a Creative</span>
                 <span className={styles.radioDescription}>
