@@ -140,7 +140,7 @@ function RegistrationForm () {
                 <span className={styles.radioTitle}>Join As a Creative</span>
                 <span className={styles.radioDescription}>
                   I plan to submit name ideas, Logo designs or sell names in
-                  Domain Marketplace.
+                  domain marketplace.
                 </span>
               </div>
             </label>
