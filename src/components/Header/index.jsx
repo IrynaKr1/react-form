@@ -1,8 +1,7 @@
 import { Link, useLocation } from 'react-router';
-import '../../reset.css';
 import styles from './Header.module.scss';
 
-function Header() {
+function Header () {
   const location = useLocation();
   const isLoginPage = location.pathname === '/';
 
