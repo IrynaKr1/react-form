@@ -1,18 +1,14 @@
 import * as yup from 'yup';
+import {
+  LOGIN_VALIDATION_SCHEMA,
+  NAMES_VALIDATION_SCHEMA,
+} from '../constants.js';
 
 export const USER_VALIDATION_SCHEMA = yup.object({
-  firstName: yup
-    .string()
-    .trim()
-    .max(25, 'Must be 25 characters or less')
-    .required(),
-  lastName: yup
-    .string()
-    .trim()
-    .max(35, 'Must be 35 characters or less')
-    .required(),
+  firstName: NAMES_VALIDATION_SCHEMA.max(25, 'Must be 25 characters or less'),
+  lastName: NAMES_VALIDATION_SCHEMA.max(35, 'Must be 35 characters or less'),
   email: yup.string().email().required(),
-  login: yup.string().min(4).max(15, 'Must be 15 characters or less'),
+  login: LOGIN_VALIDATION_SCHEMA,
   password: yup
     .string()
     .required('No password provided')
@@ -21,7 +17,7 @@ export const USER_VALIDATION_SCHEMA = yup.object({
 });
 
 export const USER_LOGIN_VALIDATION_SCHEMA = yup.object({
-  login: yup.string().min(4).max(15, 'Must be 15 characters or less'),
+  login: LOGIN_VALIDATION_SCHEMA.required('No login provided'),
   password: yup
     .string()
     .required('No password provided')
