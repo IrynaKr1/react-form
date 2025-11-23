@@ -144,6 +144,11 @@ function RegistrationForm () {
                 </span>
               </div>
             </label>
+            <ErrorMessage
+              name='role'
+              component='div'
+              className={styles.error}
+            />
           </div>
 
           <div className={styles.checkboxContainer}>
@@ -154,6 +159,11 @@ function RegistrationForm () {
                 Terms of Service
               </a>
             </label>
+            <ErrorMessage
+              name='checked'
+              component='div'
+              className={styles.error}
+            />
           </div>
 
           <button type='submit' className={styles.submitButton}>
