@@ -96,42 +96,42 @@ $main-padding: 10px;
     border-color: white;
   }
 
-  .radioInput {
-    margin-top: 3px;
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-  }
-
   @media (max-width: 480px) {
     padding: 12px;
   }
 }
 
+.radioInput {
+  margin-top: 3px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .radioLabel {
   flex: 1;
+}
 
-  .radioTitle {
-    font-weight: 600;
-    font-size: 16px;
-    color: white;
-    margin-bottom: 5px;
-    display: block;
+.radioTitle {
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 5px;
+  display: block;
 
-    @media (max-width: 480px) {
-      font-size: 14px;
-    }
+  @media (max-width: 480px) {
+    font-size: 14px;
   }
+}
 
-  .radioDescription {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.4;
+.radioDescription {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
 
-    @media (max-width: 480px) {
-      font-size: 12px;
-    }
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 }
 
