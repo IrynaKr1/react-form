@@ -8,7 +8,7 @@ export const USER_ROLES = {
 export const LOGIN_VALIDATION_SCHEMA = yup
   .string()
   .min(4)
-  .max(15, 'Must be 15 characters or less');
+  .max(15, 'Must be 15 characters or less').required();
 
 export const NAMES_VALIDATION_SCHEMA = yup.string().trim().required();
 
